@@ -26,7 +26,8 @@ const twoPM = moment('14:00','HH:mm');
 const threePM = moment('15:00', 'HH:mm');
 const fourPM = moment('16:00', 'HH:mm');
 const fivePM = moment('17:00','HH:mm'); 
-const sixPM = moment('18:00','HH:mm')
+const sixPM = moment('18:00','HH:mm');
+const newDay = moment('00:00','HH:mm');
 
 //producing the time at the top
 $(document).ready(function (){
@@ -40,9 +41,20 @@ todayTime();
 setInterval(todayTime, 1000);
 
 
+/* 
+to set the local storage:
+    i need to take in an input
+    when button is clicked, an event listner (.on('click,function())) will save it to local storage
+    use the set local storage
+
+    to be able to open it when the page is refreshed
+    use the get local storage
+*/
 
 
-
+// $('#nineSubmit').on('click',function(){
+//     localStorage.setItem('nine', $('#taskInput').val());
+// })
 
 
 /*
@@ -58,6 +70,9 @@ to get the color to change:
 
 //formatting for the colors to change when the time changes
 //9 AM
+$('#nineSubmit').on('click',function(){
+    localStorage.setItem('nine', $('#taskInput').val());
+})
     if (moment() > nineAM){
         $('.nine').addClass('past')
     }
@@ -67,7 +82,13 @@ to get the color to change:
     else if(moment() < tenAM){
         $('.nine').addClass('future')
     }
+
+
+    
 //10 AM
+$('#tenSubmit').on('click',function(){
+    localStorage.setItem('ten', $('#tenInput').val());
+})
     if (moment() > tenAM){
         $('.ten').addClass('past')
     }
@@ -77,7 +98,11 @@ to get the color to change:
     else if(moment() < elevenAM){
         $('.ten').addClass('future')
     }
+
 //11
+$('#elevenSubmit').on('click',function(){
+    localStorage.setItem('eleven', $('#elevenInput').val());
+})
     if (moment() > elevenAM){
         $('.eleven').addClass('past')
     }
@@ -87,7 +112,11 @@ to get the color to change:
     else if(moment() < twelvePM){
         $('.eleven').addClass('future')
     }
+
 //12
+$('#twelveSubmit').on('click',function(){
+    localStorage.setItem('twelve', $('#twelveInput').val());
+})
     if (moment() > twelvePM){
         $('.twelve').addClass('past')
     }
@@ -97,7 +126,11 @@ to get the color to change:
     else if(moment() < onePM){
         $('.twelve').addClass('future')
     }
+
 //1
+$('#oneSubmit').on('click',function(){
+    localStorage.setItem('one', $('#oneInput').val());
+})
     if (moment() > onePM){
         $('.one').addClass('past')
     }
@@ -107,7 +140,11 @@ to get the color to change:
     else if(moment() < twoPM){
         $('.one').addClass('future')
     }
+
 //2
+$('#twoSubmit').on('click',function(){
+    localStorage.setItem('two', $('#twoInput').val());
+})
     if (moment() > twoPM){
         $('.two').addClass('past')
     }
@@ -117,7 +154,11 @@ to get the color to change:
     else if(moment() < threePM){
         $('.two').addClass('future')
     }
+
 //3
+$('#threeSubmit').on('click',function(){
+    localStorage.setItem('three', $('#threeInput').val());
+})
     if (moment() > threePM){
         $('.three').addClass('past')
     }
@@ -127,7 +168,11 @@ to get the color to change:
     else if(moment() < fourPM){
         $('.three').addClass('future')
     }
+
 //4
+$('#fourSubmit').on('click',function(){
+    localStorage.setItem('four', $('#fourInput').val());
+})
     if (moment() > fourPM){
         $('.four').addClass('past')
     }
@@ -137,7 +182,11 @@ to get the color to change:
     else if(moment() < fivePM){
         $('.four').addClass('future')
     }
+
 //5
+$('#fiveSubmit').on('click',function(){
+    localStorage.setItem('five', $('#fiveInput').val());
+})
     if (moment() > fivePM){
         $('.five').addClass('past');
     }
@@ -148,7 +197,9 @@ to get the color to change:
         $('.five').addClass('future');
     }
 
-
+    if(moment().isSame(newDay)){
+        localStorage.clear;
+    }
 
 
 
