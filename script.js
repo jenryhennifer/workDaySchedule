@@ -17,7 +17,7 @@ THEN the saved events persist
 */
 
 //variables to represent hours in the say
-const nineAM = moment('9:00','HH:mm');
+// const nineAM = moment('9:00','HH:mm');
 const tenAM = moment('10:00','HH:mm');
 const elevenAM = moment('11:00','HH:mm');
 const twelvePM = moment('12:00','HH:mm');
@@ -29,8 +29,14 @@ const fivePM = moment('17:00','HH:mm');
 const sixPM = moment('18:00','HH:mm');
 const newDay = moment('00:00','HH:mm');
 
+// const times = [9,10,11,12,13,14,15,16,17,18,0];
+
+// const moments = times.map(time => moment(`${time}:00`, 'HH:mm'));
+
+
 //producing the time at the top
 $(document).ready(function (){
+
 moment().format('YYY-MM-DD')
 
 let todayTime = function(){
@@ -68,46 +74,71 @@ to get the color to change:
 */
 
 
+
 //formatting for the colors to change when the time changes
 //9 AM
+getNine = localStorage.getItem('nineSave');
+$('#nineInput').val(getNine);
+
 $('#nineSubmit').on('click',function(){
-    localStorage.setItem('nine', $('#taskInput').val());
+    localStorage.setItem('nineSave', $('#nineInput').val());
+
 })
-    if (moment() > nineAM){
-        $('.nine').addClass('past')
+
+    if (moment() > tenAM){
+        $('.nine').addClass('past');
     }
     else if(moment().isBetween(nineAM,tenAM)){
         $('.nine').addClass('present')
     }
-    else if(moment() < tenAM){
+    else if(moment() < nineAM){
         $('.nine').addClass('future')
     }
+
+
+
   
 //10 AM
+getNine = localStorage.getItem('tenSave');
+$('#tenInput').val(getNine);
+
+/*
+    iterate through times
+
+    for each time
+        if moment > time
+            past class
+        if  time < moment < nextTime
+            present
+        if moment
+
+*/
+
 $('#tenSubmit').on('click',function(){
-    localStorage.setItem('ten', $('#tenInput').val());
+    localStorage.setItem('tenSave', $('#tenInput').val());
 })
-    if (moment() > tenAM){
+    if (moment() > elevenAM){
         $('.ten').addClass('past')
     }
     else if(moment().isBetween(tenAM,elevenAM)){
         $('.ten').addClass('present')
     }
-    else if(moment() < elevenAM){
+    else if(moment() < tenAM){
         $('.ten').addClass('future')
     }
+
 
 //11
 $('#elevenSubmit').on('click',function(){
     localStorage.setItem('eleven', $('#elevenInput').val());
 })
-    if (moment() > elevenAM){
+    if (moment() > twelvePM){
         $('.eleven').addClass('past')
     }
     else if(moment().isBetween(elevenAM,twelvePM)){
         $('.eleven').addClass('present')
     }
-    else if(moment() < twelvePM){
+    else if(moment() < elevenAM){
         $('.eleven').addClass('future')
     }
 
@@ -115,13 +146,13 @@ $('#elevenSubmit').on('click',function(){
 $('#twelveSubmit').on('click',function(){
     localStorage.setItem('twelve', $('#twelveInput').val());
 })
-    if (moment() > twelvePM){
+    if (moment() > onePM){
         $('.twelve').addClass('past')
     }
     else if(moment().isBetween(twelvePM,onePM)){
         $('.twelve').addClass('present')
     }
-    else if(moment() < onePM){
+    else if(moment() < twelvePM){
         $('.twelve').addClass('future')
     }
 
@@ -143,13 +174,13 @@ $('#oneSubmit').on('click',function(){
 $('#twoSubmit').on('click',function(){
     localStorage.setItem('two', $('#twoInput').val());
 })
-    if (moment() > twoPM){
+    if (moment() > threePM){
         $('.two').addClass('past')
     }
     else if(moment().isBetween(twoPM,threePM)){
         $('.two').addClass('present')
     }
-    else if(moment() < threePM){
+    else if(moment() < twoPM){
         $('.two').addClass('future')
     }
 
@@ -157,13 +188,13 @@ $('#twoSubmit').on('click',function(){
 $('#threeSubmit').on('click',function(){
     localStorage.setItem('three', $('#threeInput').val());
 })
-    if (moment() > threePM){
+    if (moment() > fourPM){
         $('.three').addClass('past')
     }
     else if(moment().isBetween(threePM,fourPM)){
         $('.three').addClass('present')
     }
-    else if(moment() < fourPM){
+    else if(moment() < threePM){
         $('.three').addClass('future')
     }
 
@@ -171,13 +202,13 @@ $('#threeSubmit').on('click',function(){
 $('#fourSubmit').on('click',function(){
     localStorage.setItem('four', $('#fourInput').val());
 })
-    if (moment() > fourPM){
+    if (moment() > fivePM){
         $('.four').addClass('past')
     }
     else if(moment().isBetween(fourPM,fivePM)){
         $('.four').addClass('present')
     }
-    else if(moment() < fivePM){
+    else if(moment() < fourPM){
         $('.four').addClass('future')
     }
 
@@ -185,18 +216,20 @@ $('#fourSubmit').on('click',function(){
 $('#fiveSubmit').on('click',function(){
     localStorage.setItem('five', $('#fiveInput').val());
 })
-    if (moment() > fivePM){
+    if (moment() > sixPM){
         $('.five').addClass('past');
     }
     else if(moment().isBetween(fivePM,sixPM)){
         $('.five').addClass('present');
     }
-    else if(moment() < sixPM){
+    else if(moment() < fivePM){
         $('.five').addClass('future');
     }
 
+
+
     if(moment().isSame(newDay)){
-        localStorage.clear;
+        localStorage.clear();
     }
 
 
