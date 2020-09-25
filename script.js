@@ -82,9 +82,7 @@ $('#nineSubmit').on('click',function(){
     else if(moment() < tenAM){
         $('.nine').addClass('future')
     }
-
-
-    
+  
 //10 AM
 $('#tenSubmit').on('click',function(){
     localStorage.setItem('ten', $('#tenInput').val());
