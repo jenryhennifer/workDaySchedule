@@ -25,6 +25,7 @@ https://github.com/jenryhennifer/workDaySchedule
 
 ## Sample Image
 
+![image](image.png);
 
 <hr />
 
@@ -66,6 +67,10 @@ The colors were determined by the current time:
     }
 ```
 
+## Growth
+Unfortunately, I was having difficulties dynamically using JQUERY to shorten my code. GOOD NEWS! It all works. I plan to meet with a tutor next week to try to improve this project
+
+<hr />
 
 ## License
 

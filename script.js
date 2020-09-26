@@ -77,6 +77,19 @@ to get the color to change:
 
 //formatting for the colors to change when the time changes
 //9 AM
+
+/*
+    iterate through times
+
+    for each time
+        if moment > time
+            past class
+        if  time < moment < nextTime
+            present
+        if moment
+
+*/
+
 getNine = localStorage.getItem('nineSave');
 $('#nineInput').val(getNine);
 
@@ -99,20 +112,8 @@ $('#nineSubmit').on('click',function(){
 
   
 //10 AM
-getNine = localStorage.getItem('tenSave');
+getTen = localStorage.getItem('tenSave');
 $('#tenInput').val(getNine);
-
-/*
-    iterate through times
-
-    for each time
-        if moment > time
-            past class
-        if  time < moment < nextTime
-            present
-        if moment
-
-*/
 
 $('#tenSubmit').on('click',function(){
     localStorage.setItem('tenSave', $('#tenInput').val());
@@ -129,8 +130,11 @@ $('#tenSubmit').on('click',function(){
 
 
 //11
+getEleven = localStorage.getItem('elevenSave');
+$('#elevenInput').val(getEleven);
+
 $('#elevenSubmit').on('click',function(){
-    localStorage.setItem('eleven', $('#elevenInput').val());
+    localStorage.setItem('elevenSave', $('#elevenInput').val());
 })
     if (moment() > twelvePM){
         $('.eleven').addClass('past')
@@ -143,8 +147,11 @@ $('#elevenSubmit').on('click',function(){
     }
 
 //12
+getTwelve = localStorage.getItem('twelveSave');
+$('#twelveInput').val(getTwelve);
+
 $('#twelveSubmit').on('click',function(){
-    localStorage.setItem('twelve', $('#twelveInput').val());
+    localStorage.setItem('twelveSave', $('#twelveInput').val());
 })
     if (moment() > onePM){
         $('.twelve').addClass('past')
@@ -157,8 +164,11 @@ $('#twelveSubmit').on('click',function(){
     }
 
 //1
+getOne = localStorage.getItem('oneSave');
+$('#oneInput').val(getOne);
+
 $('#oneSubmit').on('click',function(){
-    localStorage.setItem('one', $('#oneInput').val());
+    localStorage.setItem('oneSave', $('#oneInput').val());
 })
     if (moment() > onePM){
         $('.one').addClass('past')
@@ -171,8 +181,11 @@ $('#oneSubmit').on('click',function(){
     }
 
 //2
+getTwo = localStorage.getItem('twoSave');
+$('#twoInput').val(getTwo);
+
 $('#twoSubmit').on('click',function(){
-    localStorage.setItem('two', $('#twoInput').val());
+    localStorage.setItem('twoSave', $('#twoInput').val());
 })
     if (moment() > threePM){
         $('.two').addClass('past')
@@ -185,8 +198,11 @@ $('#twoSubmit').on('click',function(){
     }
 
 //3
+getThree = localStorage.getItem('threeSave');
+$('#threeInput').val(getThree);
+
 $('#threeSubmit').on('click',function(){
-    localStorage.setItem('three', $('#threeInput').val());
+    localStorage.setItem('threeSave', $('#threeInput').val());
 })
     if (moment() > fourPM){
         $('.three').addClass('past')
@@ -199,8 +215,11 @@ $('#threeSubmit').on('click',function(){
     }
 
 //4
+getFour = localStorage.getItem('fourSave');
+$('#fourInput').val(getFour);
+
 $('#fourSubmit').on('click',function(){
-    localStorage.setItem('four', $('#fourInput').val());
+    localStorage.setItem('fourSave', $('#fourInput').val());
 })
     if (moment() > fivePM){
         $('.four').addClass('past')
@@ -213,8 +232,11 @@ $('#fourSubmit').on('click',function(){
     }
 
 //5
+getFive = localStorage.getItem('fiveSave');
+$('#fiveInput').val(getFive);
+
 $('#fiveSubmit').on('click',function(){
-    localStorage.setItem('five', $('#fiveInput').val());
+    localStorage.setItem('fiveSave', $('#fiveInput').val());
 })
     if (moment() > sixPM){
         $('.five').addClass('past');
